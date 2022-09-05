@@ -5,26 +5,23 @@
 // showNumberOfItems(itemsEl)
 
 function showNumberOfItems(items) {
- console.log(`Number of categories: ${items.children.length}`)   
-};
+    console.log(`Number of categories: ${items.children.length}`);
+}
 
-const categoriesEl = document.querySelector('#categories')
-showNumberOfItems(categoriesEl)
+const categoriesEl = document.querySelector('#categories');
+showNumberOfItems(categoriesEl);
 
 // =============================================================
 
-const itemsEl = document.querySelectorAll('.item')
+const itemsEl = document.querySelectorAll('.item');
 
 function numberElementsOfItem(arr) {
     for (const item of arr) {
-        const title = item.querySelector('h2')
-        console.log(`Category: ${title.textContent}`)
-        const numberElemements = item.querySelectorAll('li')    
+        const title = item.querySelector('h2');
+        console.log(`Category: ${title.textContent}`);
+        const numberElemements = item.querySelectorAll('li');
         console.log(`Elements: ${numberElemements.length}`);
     }
-    
-};
+}
 
 numberElementsOfItem(itemsEl);
-
-
