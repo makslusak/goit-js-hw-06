@@ -1,15 +1,15 @@
-const refs = {
-    inputEl: document.querySelector('#validation-input'),
-};
+const inputEl = document.querySelector('#validation-input');
 
-const validLength = Number(refs.inputEl.dataset.length);
-refs.inputEl.addEventListener('blur', onInputValid);
+const validLength = Number(inputEl.dataset.length);
+inputEl.addEventListener('blur', onInputValid);
 
 function onInputValid(event) {
     if (event.currentTarget.value.length === validLength) {
-        refs.inputEl.classList.remove('invalid');
-        return refs.inputEl.classList.add('valid');
+        return addRemoveClass('valid', 'invalid');
     }
-    refs.inputEl.classList.add('invalid');
-    refs.inputEl.classList.remove('valid');
+    addRemoveClass('invalid', 'valid');
+}
+function addRemoveClass(addClass, removeClass) {
+    inputEl.classList.remove(removeClass);
+    inputEl.classList.add(addClass);
 }
